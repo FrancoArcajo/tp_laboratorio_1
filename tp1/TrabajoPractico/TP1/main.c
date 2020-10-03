@@ -109,3 +109,100 @@ int main()
 
     return 0;
 }
+
+/// FUNCION C
+
+int sumar(int num1,int num2){
+    int suma;
+    suma = num1 + num2;
+
+    return suma;
+}
+
+int restar (int num1, int num2) {
+    int resta;
+    resta = num1 - num2;
+
+    return resta;
+}
+int multiplicar (int num1, int num2) {
+    int multiplicacion;
+    multiplicacion = num1 * num2;
+
+    return multiplicacion;
+}
+float dividir (int num1, int num2) {
+    float division;
+    division = num1 / num2;
+
+    return division;
+
+}
+int factorial (int numero){
+
+    if(numero >= 13){
+        return -1;
+    }else if(numero <= 1){
+        return 1;
+    }else{
+        return numero * factorial(numero - 1);
+    }
+}
+
+/// FUNCION H
+#ifndef FUNCIONES_H_INCLUDED
+#define FUNCIONES_H_INCLUDED
+
+#endif // FUNCIONES_H_INCLUDED
+
+/** \brief Calcula la suma de dos numeros.
+ *
+ * \param Ingreso primer numero para sumar
+ * \param Ingreso el segundo numero para sumar.
+ * \return Devuelve suma.
+ *
+ */
+
+int sumar (int num1, int num2);
+
+/** \brief Calcula la resta de dos numeros.
+ *
+ * \param Ingreso el primer numero para restar.
+ * \param Ingreso el segundo numero para restar.
+ * \return Devuelve la resta.
+ *
+ */
+
+int restar (int num1, int num2);
+
+/** \brief Calcula la multiplicacion de dos numeros.
+ *
+ * \param Ingreso primer numero para multiplicar.
+ * \param Ingreso segundo numero para multiplicar.
+ * \return Devuelve la multiplicacion.
+ *
+ */
+
+
+int multiplicar (int num1, int num2);
+
+/** \brief Calcula la division de dos numeros.
+ *
+ * \param Ingreso primer numero para dividir.
+ * \param Ingreso segundo numero para dividir.
+ * \return Devuelve la division.
+ *
+ */
+
+
+float dividir (float num1, float num2);
+
+/** \brief Calcula la factorizacion de un numero.
+ *
+ * \param Ingreso numero para factorizar.
+ * \return Devuelve la factorizacion.
+ *
+ */
+
+int factorial  (int numero);
+

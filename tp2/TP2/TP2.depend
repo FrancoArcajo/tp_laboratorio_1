@@ -1,0 +1,17 @@
+# depslib dependency file v1.0
+1601679862 source:c:\users\marcelo\desktop\primer cuatri\tp2\main.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<string.h>
+	"arrayEmployees.h"
+
+1601680238 source:c:\users\marcelo\desktop\primer cuatri\tp2\arrayemployees.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<string.h>
+	"arrayEmployees.h"
+
+1601679861 c:\users\marcelo\desktop\primer cuatri\tp2\arrayemployees.h
+

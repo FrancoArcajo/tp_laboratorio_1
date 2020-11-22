@@ -5,13 +5,23 @@
 
 #endif // MENU_H_INCLUDED
 
+/**
+ * \brief Menu principal
+ * \return Retorna la opcion elegida
+ */
 
 int menu();
 
-
-int menuSort();
-
+/**
+ * \brief Menu de modificacion
+ * \return Retorna la opcion elegida
+ */
 
 int menuEdit();
 
+/**
+ * \brief Menu de ordenamiento
+ * \return Retorna la opcion elegida
+ */
 
+int menuSort();

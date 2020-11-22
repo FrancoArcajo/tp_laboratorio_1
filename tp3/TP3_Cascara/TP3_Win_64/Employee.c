@@ -9,6 +9,7 @@
 
 Employee* employee_new()
 {
+
 	Employee* this = (Employee*) malloc(sizeof(Employee));
 
 	if(this != NULL)
@@ -51,15 +52,28 @@ int employee_delete(Employee* this)
 
 int employee_setId(Employee* this,int id)
 {
-    int todoOk = 0;
+    int todoOk = -1;
 
     if(this != NULL && id >= 0)
     {
       this ->id = id;
-      todoOk = 1;
+      todoOk = 0;
     }
 
      return todoOk;
+}
+
+int employee_getId(Employee* this,int* id)
+{
+    int todoOk = -1;
+
+     if(this != NULL && id != NULL)
+    {
+        *id = this ->id;
+        todoOk = 0;
+    }
+    return todoOk;
+
 }
 
 int employee_updateId(LinkedList* pArrayListEmployee)
@@ -87,29 +101,16 @@ int employee_updateId(LinkedList* pArrayListEmployee)
 	return proximoId;
 }
 
-int employee_getId(Employee* this,int* id)
-{
-    int todoOk = 0;
-
-     if(this != NULL && id != NULL)
-    {
-        *id = this ->id;
-        todoOk = 1;
-    }
-    return todoOk;
-
-}
-
 int employee_setNombre(Employee* this,char* nombre)
 {
-    int todoOk = 0;
+    int todoOk = -1;
 
     if(this != NULL && nombre != NULL)
     {
         if(strlen(nombre) > 0)
         {
             strcpy(this ->nombre,nombre);
-            todoOk = 1;
+            todoOk = 0;
         }
     }
     return todoOk;
@@ -117,12 +118,12 @@ int employee_setNombre(Employee* this,char* nombre)
 
 int employee_getNombre(Employee* this,char* nombre)
 {
-    int todoOk = 0;
+    int todoOk = -1;
 
      if(this != NULL && nombre != NULL)
     {
         strcpy(nombre,this ->nombre);
-        todoOk = 1;
+        todoOk = 0;
     }
 
     return todoOk;
@@ -130,47 +131,47 @@ int employee_getNombre(Employee* this,char* nombre)
 
 int employee_setHorasTrabajadas(Employee* this,int horasTrabajadas)
 {
-    int todoOk = 0;
+    int todoOk = -1;
 
     if(this != NULL && horasTrabajadas >= 0 )
     {
        this ->horasTrabajadas = horasTrabajadas;
-       todoOk = 1;
+       todoOk = 0;
     }
 
     return todoOk;
 }
 int employee_getHorasTrabajadas(Employee* this,int* horasTrabajadas)
 {
-    int todoOk = 0;
+    int todoOk = -1;
 
      if(this != NULL && horasTrabajadas != NULL)
     {
         *horasTrabajadas = this ->horasTrabajadas ;
-        todoOk = 1;
+        todoOk = 0;
     }
     return todoOk;
 }
 
 int employee_setSueldo(Employee* this,int sueldo)
 {
-    int todoOk = 0;
+    int todoOk = -1;
 
     if(this != NULL && sueldo >= 0)
     {
       this ->sueldo = sueldo;
-       todoOk = 1;
+       todoOk = 0;
     }
     return todoOk;
 }
 int employee_getSueldo(Employee* this,int* sueldo)
 {
-    int todoOk = 0;
+    int todoOk = -1;
 
      if(this != NULL && sueldo != NULL)
     {
         *sueldo = this ->sueldo ;
-        todoOk = 1;
+        todoOk = 0;
     }
     return todoOk;
 }
@@ -240,7 +241,7 @@ int employee_compareName(void* employeeA, void* employeeB)
 }
 int employee_compareSalary(void* employeeA, void* employeeB)
 {
-    int todoOk=0;
+    int todoOk = 0;
 
     Employee* pEmp1;
     Employee* pEmp2;
@@ -250,20 +251,15 @@ int employee_compareSalary(void* employeeA, void* employeeB)
         pEmp1=(Employee*)employeeA;
         pEmp2=(Employee*)employeeB;
 
-        if(pEmp1->sueldo == pEmp2->sueldo)
-        {
-            todoOk = 0;
-        }
-        else if(pEmp1->sueldo > pEmp2->sueldo)
+        if(pEmp1->sueldo > pEmp2->sueldo)
         {
             todoOk = 1;
         }
-        else
+        else if(pEmp1->sueldo < pEmp2->sueldo)
         {
             todoOk = -1;
         }
     }
-
     return todoOk;
 }
 int employee_compareId(void* employeeA, void* employeeB)
@@ -280,21 +276,15 @@ int employee_compareId(void* employeeA, void* employeeB)
         pEmp2 = (Employee*)employeeB;
 
 
-        if(pEmp1->id == pEmp2->id)
-        {
-            todoOk = 0;
-        }
-        else if(pEmp1->id > pEmp2->id)
+        if(pEmp1->id > pEmp2->id)
         {
             todoOk = 1;
         }
-        else
+        else if(pEmp1->id < pEmp2->id)
         {
             todoOk = -1;
         }
-
     }
-
     return todoOk;
 }
 int employee_compareHoursWorked(void* employeeA, void* employeeB)
@@ -309,15 +299,11 @@ int employee_compareHoursWorked(void* employeeA, void* employeeB)
         pEmp1 = (Employee*)employeeA;
         pEmp2 = (Employee*)employeeB;
 
-        if(pEmp1->horasTrabajadas == pEmp2->horasTrabajadas)
-        {
-            todoOk = 0;
-        }
-        else if(pEmp1->horasTrabajadas > pEmp2->horasTrabajadas)
+        if(pEmp1->horasTrabajadas > pEmp2->horasTrabajadas)
         {
             todoOk = 1;
         }
-        else
+        else if(pEmp1->horasTrabajadas < pEmp2->horasTrabajadas)
         {
             todoOk = -1;
         }
@@ -335,7 +321,7 @@ int employee_modifyName(LinkedList* pArrayListEmployee, int indice)
 
 	pEmp = ll_get(pArrayListEmployee, indice);
 
-	if(utn_getCadena(auxNombre, 128, 2, "Ingrese nuevo nombre: ","Error, nombre invalido.\n") == 0)
+	if(utn_getCadena(auxNombre, 128, 2, "Ingrese nuevo nombre: ","\nError, nombre invalido.\n") == 0)
 	{
 		normalizeStr(auxNombre);
 		employee_setNombre(pEmp, auxNombre);
@@ -354,7 +340,7 @@ int employee_modifyHoursWorked(LinkedList* pArrayListEmployee, int indice)
 
 	pEmp = ll_get(pArrayListEmployee, indice);
 
-	if(utn_getEntero(&auxHoras, 2, "Ingrese modificacion de horas trabajadas: ", "Error, invalido.\n", 0, 100000) == 0)
+	if(utn_getEntero(&auxHoras, 2, "Ingrese modificacion de horas trabajadas: ", "\nError, horas invalidas.\n", 0, 100000) == 0)
 	{
 		employee_setHorasTrabajadas(pEmp, auxHoras);
 		todoOk = 0;
@@ -372,7 +358,7 @@ int employee_modifySalary(LinkedList* pArrayListEmployee, int indice)
 
 	pEmp = ll_get(pArrayListEmployee, indice);
 
-	if(utn_getEntero(&auxSueldo, 2, "Ingrese nuevo sueldo: ", "Error, sueldo invalido.\n", 10000, 300000) == 0)
+	if(utn_getEntero(&auxSueldo, 2, "Ingrese nuevo sueldo: ", "\nError, sueldo invalido.\n", 10000, 300000) == 0)
 	{
 		employee_setSueldo(pEmp, auxSueldo);
 		todoOk = 0;

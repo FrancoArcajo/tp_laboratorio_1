@@ -78,9 +78,9 @@ int controller_addEmployee(LinkedList* pArrayListEmployee)
 
     if(pArrayListEmployee != NULL && pEmp!=NULL)
     {
-        if(!utn_getCadena(auxNombre,127, 2,"Ingrese nombre: ","Nombre Invalido")
-         && !utn_getEntero(&auxHorasTrabajadas, 2, "Ingrese horas trabajadas: ","Valor invalido",0,9999)
-         && !utn_getEntero(&auxSueldo, 2, "Ingrese el sueldo: ","Valor invalido",0,99999))
+        if(!utn_getCadena(auxNombre,127, 2,"Ingrese nombre: ","\nError, Nombre Invalido\n")
+         && !utn_getEntero(&auxHorasTrabajadas, 2, "Ingrese horas trabajadas: ","\nError, Horas invalidoas(0 a 10000)\n",0,10000)
+         && !utn_getEntero(&auxSueldo, 2, "Ingrese el sueldo: ","\nError, Valor invalido(10000 a 300000) \n",10000,300000))
         {
             normalizeStr(auxNombre);
 
@@ -215,7 +215,7 @@ int controller_removeEmployee(LinkedList* pArrayListEmployee)
                 printf("Confirma la baja? s/n: ");
 				scanf("%c", &confirma);
 
-				if(confirma == 's')
+				if(confirma == 's' || confirma == 'S')
 				{
 					ll_remove(pArrayListEmployee, indice);
 
@@ -234,6 +234,7 @@ int controller_removeEmployee(LinkedList* pArrayListEmployee)
 
 int controller_ListEmployee(LinkedList* pArrayListEmployee)
 {
+    int todoOk = -1;
    Employee* pEmp = employee_new();
 
     if(pArrayListEmployee != NULL && pEmp != NULL)
@@ -241,12 +242,13 @@ int controller_ListEmployee(LinkedList* pArrayListEmployee)
         employee_printEmployee(pArrayListEmployee);
     }
 
-    return 1;
+    return todoOk;
 }
 
 int controller_sortEmployee(LinkedList* pArrayListEmployee)
 {
     int opcion;
+    int orden;
 
     if(pArrayListEmployee != NULL)
     {
@@ -257,20 +259,28 @@ int controller_sortEmployee(LinkedList* pArrayListEmployee)
         switch(opcion)
         {
         case 1:
-            ll_sort(pArrayListEmployee, employee_compareId, 1);
-            printf("La lista ha sido ordenada.\n");
+            utn_getEntero(&orden, 2, "1 ASC o 0 DESC: ", "Error, ingrese 0 o 1\n", 0, 1);
+            printf("\nLa lista esta siendo ordenada...\n");
+            ll_sort(pArrayListEmployee, employee_compareId, orden);
+             printf("\nLa lista ha sido ordenada con exito.\n");
             break;
         case 2:
-            ll_sort(pArrayListEmployee, employee_compareName, 1);
-            printf("La lista ha sido ordenada.\n");
+            utn_getEntero(&orden, 2, "1 ASC o 0 DESC: ", "Error, ingrese 0 o 1\n", 0, 1);
+            printf("\nLa lista esta siendo ordenada...\n");
+            ll_sort(pArrayListEmployee, employee_compareName, orden);
+             printf("\nLa lista ha sido ordenada con exito.\n");
             break;
         case 3:
-            ll_sort(pArrayListEmployee, employee_compareHoursWorked, 1);
-            printf("La lista ha sido ordenada.\n");
+            utn_getEntero(&orden, 2, "1 ASC o 0 DESC: ", "Error, ingrese 0 o 1\n", 0, 1);
+            printf("\nLa lista esta siendo ordenada...\n");
+            ll_sort(pArrayListEmployee, employee_compareHoursWorked, orden);
+            printf("\nLa lista ha sido ordenada con exito.\n");
             break;
         case 4:
-            ll_sort(pArrayListEmployee, employee_compareSalary, 1);
-            printf("La lista ha sido ordenada.\n");
+            utn_getEntero(&orden, 2, "1 ASC o 0 DESC: ", "Error, ingrese 0 o 1\n", 0, 1);
+            printf("\nLa lista esta siendo ordenada...\n");
+            ll_sort(pArrayListEmployee, employee_compareSalary, orden);
+             printf("\nLa lista ha sido ordenada con exito.\n");
             break;
         case 5:
             break;
@@ -284,7 +294,7 @@ int controller_sortEmployee(LinkedList* pArrayListEmployee)
 
 int controller_saveAsText(char* path , LinkedList* pArrayListEmployee)
 {
-    int todoOk = 0;
+    int todoOk = -1;
     int len;
 
     FILE* pFile;
@@ -305,7 +315,7 @@ int controller_saveAsText(char* path , LinkedList* pArrayListEmployee)
             }
         }
 
-        todoOk = 1;
+        todoOk = 0;
 
         free(pEmp);
         fclose(pFile);
@@ -316,7 +326,7 @@ int controller_saveAsText(char* path , LinkedList* pArrayListEmployee)
 
 int controller_saveAsBinary(char* path , LinkedList* pArrayListEmployee)
 {
-	int todoOk = 0;
+	int todoOk = -1;
 
 	FILE* pFile;
 	Employee* pEmp;
@@ -334,7 +344,7 @@ int controller_saveAsBinary(char* path , LinkedList* pArrayListEmployee)
 		printf("Archivo guardado con exito\n");
 		fclose(pFile);
 
-		todoOk = 1;
+		todoOk = 0;
 	}
 
     return todoOk;

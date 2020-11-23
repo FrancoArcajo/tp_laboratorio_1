@@ -3,7 +3,7 @@
 #include <ctype.h>
 #include <string.h>
 #include "../inc/LinkedList.h"
-#include "../inc/mascotas.h"
+#include "../inc/employee.h"
 #include "../inc/controller.h"
 #include "../inc/parser.h"
 #include "../inc/menu.h"

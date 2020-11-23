@@ -1,5 +1,5 @@
-/*#ifndef MASCOTAS_H_INCLUDED
-#define MASCOTAS_H_INCLUDED
+#ifndef EMPLOYEE_H_INCLUDED
+#define EMPLOYEE_H_INCLUDED
 
 #include "LinkedList.h"
 
@@ -184,4 +184,4 @@ int employee_modifyHoursWorked(LinkedList* pArrayListEmployee, int indice);
 
 int employee_modifySalary(LinkedList* pArrayListEmployee, int indice);
 
-#endif // MASCOTAS_H_INCLUDED*/
+#endif // EMPLOYEE_H_INCLUDED

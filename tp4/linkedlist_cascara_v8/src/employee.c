@@ -1,4 +1,4 @@
-/*#include <stdio.h>
+#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include "../inc/employee.h"
@@ -364,4 +364,4 @@ int employee_modifySalary(LinkedList* pArrayListEmployee, int indice)
 	}
 
  return todoOk;
-}*/
+}

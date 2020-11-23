@@ -23,7 +23,7 @@
 #include "../testing/inc/main_test.h"
 #include "../inc/LinkedList.h"
 #include "../inc/controller.h"
-#include "../inc/mascotas.h"
+#include "../inc/employee.h"
 #include "../inc/menu.h"
 
 

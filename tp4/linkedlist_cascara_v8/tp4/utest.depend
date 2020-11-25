@@ -4971,3 +4971,75 @@
 	<ctype.h>
 	"../inc/utn.h"
 
+1606169967 source:c:\users\blodrs\desktop\tp labo\tp_laboratorio_1\tp4\linkedlist_cascara_v8\tp4\controller.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<string.h>
+	"../inc/LinkedList.h"
+	"../inc/employee.h"
+	"../inc/controller.h"
+	"../inc/parser.h"
+	"../inc/menu.h"
+	"../inc/utn.h"
+
+1606170415 c:\users\blodrs\desktop\tp labo\tp_laboratorio_1\tp4\linkedlist_cascara_v8\inc\linkedlist.h
+
+1606171084 c:\users\blodrs\desktop\tp labo\tp_laboratorio_1\tp4\linkedlist_cascara_v8\inc\employee.h
+	"LinkedList.h"
+
+1606171096 c:\users\blodrs\desktop\tp labo\tp_laboratorio_1\tp4\linkedlist_cascara_v8\inc\controller.h
+
+1606171063 c:\users\blodrs\desktop\tp labo\tp_laboratorio_1\tp4\linkedlist_cascara_v8\inc\parser.h
+
+1606171075 c:\users\blodrs\desktop\tp labo\tp_laboratorio_1\tp4\linkedlist_cascara_v8\inc\menu.h
+
+1606171050 c:\users\blodrs\desktop\tp labo\tp_laboratorio_1\tp4\linkedlist_cascara_v8\inc\utn.h
+
+1606183790 source:c:\users\blodrs\desktop\tp labo\tp_laboratorio_1\tp4\linkedlist_cascara_v8\tp4\employee.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"../inc/employee.h"
+	"../inc/controller.h"
+	"../inc/menu.h"
+	"../inc/utn.h"
+
+1606169769 source:c:\users\blodrs\desktop\tp labo\tp_laboratorio_1\tp4\linkedlist_cascara_v8\tp4\linkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"../inc/LinkedList.h"
+
+1606171112 source:c:\users\blodrs\desktop\tp labo\tp_laboratorio_1\tp4\linkedlist_cascara_v8\tp4\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"../inc/LinkedList.h"
+	"../inc/controller.h"
+	"../inc/employee.h"
+	"../inc/menu.h"
+
+1606169934 source:c:\users\blodrs\desktop\tp labo\tp_laboratorio_1\tp4\linkedlist_cascara_v8\tp4\menu.c
+	<stdio.h>
+	<stdlib.h>
+	"../inc/LinkedList.h"
+	"../inc/employee.h"
+	"../inc/controller.h"
+	"../inc/parser.h"
+	"../inc/menu.h"
+	"../inc/utn.h"
+
+1606169907 source:c:\users\blodrs\desktop\tp labo\tp_laboratorio_1\tp4\linkedlist_cascara_v8\tp4\parser.c
+	<stdio.h>
+	<stdlib.h>
+	"../inc/LinkedList.h"
+	"../inc/employee.h"
+
+1606169898 source:c:\users\blodrs\desktop\tp labo\tp_laboratorio_1\tp4\linkedlist_cascara_v8\tp4\utn.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"../inc/utn.h"
+

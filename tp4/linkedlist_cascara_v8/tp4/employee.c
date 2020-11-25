@@ -247,8 +247,8 @@ int employee_compareSalary(void* employeeA, void* employeeB)
 
     if(employeeA != NULL && employeeB != NULL)
     {
-        pEmp1=(Employee*)employeeA;
-        pEmp2=(Employee*)employeeB;
+        pEmp1 = (Employee*)employeeA;
+        pEmp2 = (Employee*)employeeB;
 
         if(pEmp1->sueldo > pEmp2->sueldo)
         {
